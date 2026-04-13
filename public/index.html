@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truedy Voice AI Demo</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos do Widget -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f172a;
+            color: #f1f5f9;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+        .setup-steps {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        .setup-steps h2 {
+            font-size: 1.1rem;
+            margin-top: 0;
+            color: #6366f1;
+        }
+        code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #e2e8f0;
+        }
+        ul {
+            padding-left: 20px;
+            color: #cbd5e1;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Truedy Voice AI</h1>
+        <p>Conecte-se com sua inteligência artificial por voz em tempo real.</p>
+
+        <div class="setup-steps">
+            <h2>Próximos Passos:</h2>
+            <ul>
+                <li>Abra o arquivo <code>.env</code> e cole sua <b>TRUEDY_API_KEY</b>.</li>
+                <li>Abra <code>public/widget.js</code> e cole seu <b>AGENT_ID</b>.</li>
+                <li>No terminal, rode: <code>npm run dev</code></li>
+                <li>Clique no botão no canto inferior direito para testar!</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ── ESTRUTURA DO WIDGET ──────────────────────────── -->
+    <div id="voice-widget-container">
+        <!-- Onde as legendas aparecerão -->
+        <div id="captions"></div>
+        
+        <!-- O botão de ligar/desligar -->
+        <button id="voice-btn">
+            <span>🎙️</span> Falar com AI
+        </button>
+    </div>
+
+    <!-- Carrega a lógica do widget -->
+    <script type="module" src="widget.js"></script>
+
+</body>
+</html>
