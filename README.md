@@ -1,3 +1,5 @@
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/jamerson-truep4p/truedy-proxy)
+
 # 🎙️ Truedy Voice AI Proxy Server
 
 Este é um servidor proxy seguro para integrar o botão de voz da **Truedy.ai** em qualquer site. Ele protege sua API Key e gerencia a conexão WebRTC.

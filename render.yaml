@@ -1,0 +1,19 @@
+# Render Blueprint para Truedy Voice Proxy
+# Use este arquivo para fazer deploys em um clique
+services:
+  - type: web
+    name: truedy-voice-proxy # Você pode mudar o nome no deploy
+    env: node
+    plan: free
+    region: oregon 
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: TRUEDY_API_KEY
+        sync: false # O Render pedirá para você digitar manualmente no deploy
+        description: "Sua API Key secreta da Truedy (Dashboard > Settings > API Keys)"
+      - key: PORT
+        value: 3000
+      - key: ALLOWED_ORIGINS
+        value: "*"
+        description: "Domínios permitidos separados por vírgula (ex: https://site1.com,https://site2.com)"
