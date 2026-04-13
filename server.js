@@ -101,8 +101,9 @@ app.post('/api/start-voice-call', async (req, res) => {
     }
 
     const data = await response.json();
-
     console.log(`✅ Chamada iniciada! Agent: ${data.agentName}`);
+    console.log(`🔗 Join URL: ${data.joinUrl}`);
+
 
     // Retorna APENAS joinUrl + agentName — NUNCA exponha a API key
     res.json({
