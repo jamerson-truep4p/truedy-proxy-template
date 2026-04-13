@@ -102,12 +102,19 @@ app.post('/api/start-voice-call', async (req, res) => {
 
     const data = await response.json();
     console.log(`✅ Chamada iniciada! Agent: ${data.agentName}`);
-    console.log(`🔗 Join URL: ${data.joinUrl}`);
+    
+    let joinUrl = data.joinUrl;
+    
+    // 🔥 HOTFIX: Corrige URL malformada da Truedy (voice..ai -> voice.ultravox.ai)
+    if (joinUrl && joinUrl.includes('voice..ai')) {
+      console.log('⚠️ URL malformada detectada. Aplicando correção para voice.ultravox.ai');
+      joinUrl = joinUrl.replace('voice..ai', 'voice.ultravox.ai');
+    }
 
+    console.log(`🔗 Join URL (final): ${joinUrl}`);
 
-    // Retorna APENAS joinUrl + agentName — NUNCA exponha a API key
     res.json({
-      joinUrl: data.joinUrl,
+      joinUrl: joinUrl,
       agentName: data.agentName,
     });
 
