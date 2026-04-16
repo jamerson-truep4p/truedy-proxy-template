@@ -1,65 +1,55 @@
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/jamerson-truep4p/truedy-proxy)
+# 🎙️ Truedy Voice AI — Proxy Template
 
-# 🎙️ Truedy Voice AI Proxy Server
+A secure, production-ready Express proxy server to integrate **Truedy.ai** voice agents into any website while keeping your API Key safe.
 
-Este é um servidor proxy seguro para integrar o botão de voz da **Truedy.ai** em qualquer site. Ele protege sua API Key e gerencia a conexão WebRTC.
-
-## 🚀 Como fazer funcionar (Local)
-
-1. **Configurar as Chaves:**
-   - Abra o arquivo `.env` e substitua `YOUR_TRUEDY_API_KEY_HERE` pela sua chave (peça no dashboard da Truedy).
-   - Abra o arquivo `public/widget.js` e substitua `YOUR_AGENT_UUID_HERE` pelo ID do seu agente.
-
-2. **Instalar e Rodar:**
-   No terminal, dentro da pasta do projeto, execute:
-   ```bash
-   npm install
-   npm run dev
-   ```
-
-3. **Testar:**
-   Abra `http://localhost:3000` no seu navegador. O botão aparecerá no canto inferior direito!
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/jamerson-truep4p/truedy-proxy-template)
 
 ---
 
-## ☁️ Como hospedar GRATUITAMENTE
-
-Para que seu botão funcione no site real, o servidor precisa estar online. Recomendo o **Render.com** por ser o mais simples e gratuito:
-
-1. Crie uma conta no [Render.com](https://render.com).
-2. Conecte seu GitHub (ou faça upload do código).
-3. Crie um novo **Web Service**.
-4. Nas configurações:
-   - **Runtime:** Node
-   - **Build Command:** `npm install`
-   - **Start Command:** `npm start`
-5. Vá em **Environment** e adicione a variável:
-   - `TRUEDY_API_KEY` = (sua chave secreta)
-6. Pronto! Ele te dará uma URL (ex: `meu-proxy.onrender.com`).
+## 🌟 Features
+- **Secure Architecture**: Hides your Truedy API Key on the server-side.
+- **One-Click Deploy**: Fully configured for [Render.com](https://render.com).
+- **Responsive Captions**: Real-time transcriptions for your voice calls.
+- **Premium Templates**: Includes beautiful, ready-to-use button designs.
+- **CORS Ready**: Configurable access to protect your endpoint.
 
 ---
 
-## 🛠️ Como "colar" no seu site oficial
+## 🚀 Speed Run (Deploy in 2 Minutes)
 
-Se você já tem seu próprio HTML e quer apenas usar essa lógica:
+### Step 1: Deploy the Server
+1. Click the **"Deploy to Render"** button above.
+2. Under **Environment Variables**, paste your `TRUEDY_API_KEY` (get it from the [Truedy Dashboard](https://dashboard.truedy.ai)).
+3. Click **Deploy**. Once finished, copy your service URL (e.g., `https://my-proxy.onrender.com`).
 
-1. No seu HTML, adicione o contêiner do botão:
-   ```html
-   <div id="voice-widget-container">
-       <div id="captions"></div>
-       <button id="voice-btn">🎙️ Falar com AI</button>
-   </div>
-   ```
+### Step 2: Configure the Widget
+1. In this repository, open `public/widget.js`.
+2. Replace `YOUR_AGENT_ID_HERE` with your Agent ID.
+3. Replace the `API_URL` with your Render URL from Step 1 (only necessary if hosting the widget on a DIFFERENT domain).
 
-2. Adicione o seu arquivo CSS (ou copie o conteúdo de `public/style.css`).
-3. Importe o script no final do `<body>`:
-   ```html
-   <script type="module" src="https://sua-url-do-render.com/widget.js"></script>
-   ```
-
-4. No `widget.js`, mude a `const API_URL = '';` para `const API_URL = 'https://sua-url-do-render.com';`.
+### Step 3: Add to Your Site
+Choose a design from our **[Templates Collection](templates.md)** and copy the HTML/CSS into your website. Link the script:
+```html
+<script type="module" src="https://YOUR-PROXY-URL.onrender.com/widget.js"></script>
+```
 
 ---
 
-## 🔒 Por que esse servidor é necessário?
-Se você colocar sua API Key diretamente no HTML/JS do seu site, **qualquer pessoa poderá roubá-la** e usar seus créditos da Truedy. Este servidor Express age como um "segurança", mantendo a chave escondida e apenas entregando a permissão de chamada para o navegador.
+## 🛠️ Local Development
+1. Clone the repo: `git clone https://github.com/your-username/truedy-proxy-template.git`
+2. Install dependencies: `npm install`
+3. Setup Environment: Rename `.env.example` to `.env` and add your key.
+4. Start: `npm run dev`
+5. Test: Open `http://localhost:3000` in your browser.
+
+---
+
+## 🔒 Why use a Proxy?
+If you put your Truedy API Key directly in your frontend code, **anyone can steal it** and use your credits. This proxy acts as a secure "guard", keeping your credentials safe while only providing a temporary authorization to the user's browser for the call.
+
+---
+
+## 🤝 Contributing & Support
+This is a community template. For issues with the Truedy API, please visit [docs.truedy.ai](https://docs.truedy.ai).
+
+Created with ❤️ by **[Jamerson Calixto](https://github.com/jamerson-truep4p)**
