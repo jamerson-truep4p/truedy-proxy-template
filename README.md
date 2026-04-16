@@ -52,4 +52,4 @@ If you put your Truedy API Key directly in your frontend code, **anyone can stea
 ## 🤝 Contributing & Support
 This is a community template. For issues with the Truedy API, please visit [docs.truedy.ai](https://docs.truedy.ai).
 
-Created with ❤️ by **[Jamerson Calixto](https://github.com/jamerson-truep4p)**
+Created with ❤️ by the **[Truedy Team](https://truedy.ai)**
